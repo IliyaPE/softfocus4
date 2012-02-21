@@ -1,0 +1,9 @@
+.left
+  %h2.camera What is soft focus
+  %p In <strong>photography</strong>, soft focus is a <strong>lens flaw</strong>, in which the lens forms images that are <strong>blurred</strong> due to spherical aberration. A soft focus lens deliberately introduces spherical aberration in order to give the appearance of blurring the image while <strong>retaining sharp edges</strong>; it is <strong>not</strong> the same as an <strong>out-of-focus</strong> image, and the effect cannot be achieved simply by defocusing a sharp lens. Soft focus is also the <strong>name of the style</strong> of photograph produced by such a lens.
+  .source
+    source:
+    = link_to 'wikipedia', 'http://en.wikipedia.org/wiki/Soft_focus'
+.right
+  %h2.hat Why this website?
+  %p There was no <strong>simple</strong> way for people to play with soft focus effet. I built this website to allow everybody to use it, <strong>wihtout</strong> any photo editing skills.

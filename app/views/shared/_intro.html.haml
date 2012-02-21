@@ -1,0 +1,15 @@
+- id ||= rand(6) + 1
+.intro
+  .left
+    .picture= image_tag "demo#{id}.jpg"
+    .drop-here
+      %h2 Try it now!
+      %p
+        Drop your own picture here
+        %br
+        or use the
+        = link_to 'legacy upload form'
+  .middle
+  .right
+    .picture= image_tag "demo#{id}-soft.jpg"
+  

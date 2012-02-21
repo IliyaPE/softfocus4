@@ -1,0 +1,165 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require reset
+ *= require_self
+ *= require_tree .
+*/
+
+$layout-width: 1000px;
+$background: #413;
+$text: #ddccc0;
+$link: #a79;
+
+body {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+  background: #cbc url('bg.png');
+  font-size: 1.2em;
+  color: $text;
+}
+
+p {
+  line-height: 1.3em;
+  text-align: justify;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: 400;
+  color: white;
+}
+
+section#main {
+  display: block;
+  background: $background url('bokeh.jpg') center center;
+  height: 650px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+header, footer, div.content {
+  width: $layout-width;
+  margin: 0 auto;
+  display: block;
+}
+
+header {
+  padding: 1em 0;
+  margin-bottom: 2em;
+  h1 {
+    height: 85px;
+    color: $text;
+    font-weight: 400;
+    font-size: 4em;
+    letter-spacing: 7px;
+    em {
+      font-style: normal;
+      color: white;
+    }
+  }
+  p {
+    font-size: 1.1em;
+  }
+}
+
+footer {
+  clear: both;
+  font-size: 0.8em;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 1em;
+}
+
+footer:before {
+  content: '';
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1em;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 2em;
+  color: white;
+  margin: 0.6em 0;
+}
+
+section#misc {
+  display: block;
+  border-top: 1px solid black;
+}
+
+.content:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.left {
+  float: left;
+  width: 410px;
+  .drop-here {
+    background: transparent url('curved_arrow.png') 30px 10px no-repeat;
+    padding: 30px 0 0 120px;
+    height: 120px;
+    h2 {
+      margin: 0.2em 0;
+    }
+    p {
+      color: $text;
+    }
+  }  
+}
+.middle {
+  float: left;
+  width: $layout-width - 410 - 410;
+  height: 300px;
+  background: transparent url('rarrow.png') 40px 120px no-repeat;
+}
+.right {
+  float: right;
+  width: 410px;
+}
+
+.picture {
+  width: 410px;
+  background: transparent url('shadow.png') center bottom no-repeat;
+  padding-bottom: 16px;
+  img {
+    border: 3px solid white;
+    display: block;
+  }
+}
+
+.source {
+  text-align: right;
+  font-size: 0.8em;
+  margin: 0.5em 0;
+}
+
+.camera {
+  background: transparent url('lens.png') right top no-repeat;
+  min-height: 48px;
+  line-height: 48px;
+}
+
+.hat {
+  background: transparent url('hat.png') right top no-repeat;
+  min-height: 48px;
+  line-height: 48px;
+}
