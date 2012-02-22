@@ -17,9 +17,10 @@ $layout-width: 1000px;
 $background: #413;
 $text: #ddccc0;
 $link: #a79;
+$font: 'Yanone Kaffeesatz', sans-serif;
 
 body {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: $font;
   font-weight: 300;
   background: #cbc url('bg.png');
   font-size: 1.2em;
@@ -37,7 +38,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: white;
 }
 
 strong {
@@ -104,6 +106,27 @@ section#misc {
   border-top: 1px solid black;
 }
 
+form {
+  margin: 1em 0;
+  font-size: 1.2em;
+  input[type=submit] {
+    background-color: $background;
+    border: 2px solid white;
+    color: white;
+    font-family: $font;
+    border-radius: 3px;
+    font-size: 1em;
+    line-height: 1.8em;
+    padding: 0 0.5em;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    &:hover {
+      background-color: #736;
+    }
+  }
+}
+
 .content:after {
   clear: both;
   content: '';
@@ -130,6 +153,26 @@ section#misc {
   width: $layout-width - 410 - 410;
   height: 300px;
   background: transparent url('rarrow.png') 40px 120px no-repeat;
+  position: relative;
+  .next {
+    background-color: $background;
+    width: 50px;
+    height: 40px;
+    padding: 15px 10px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    border-radius: 37px;
+    font-weight: normal;
+    border: 2px solid white;
+    cursor: pointer;
+    position: absolute;
+    top: 190px;
+    left: 55px;
+    &:hover {
+      background-color: #736;
+    }
+  }
 }
 .right {
   float: right;

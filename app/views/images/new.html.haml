@@ -1,1 +1,4 @@
-= render 'shared/intro'
+- if params[:mode] == :legacy
+  = render 'legacy'
+- else
+  = render 'shared/intro'
