@@ -15,3 +15,5 @@ $ ->
   if mid = $('.middle')
     div = mid.append '<div class="next">next demo</div>'
     div.click -> cycle_demo()
+  $("select, input:checkbox, input:radio, input:file").uniform();
+

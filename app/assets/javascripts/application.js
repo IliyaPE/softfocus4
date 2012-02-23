@@ -14,7 +14,3 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(function() {
-  $("select, input:checkbox, input:radio, input:file").uniform();
-})
-
