@@ -1,5 +1,5 @@
 %h2 Legacy upload form
 %p Use this form to upload your picture if you can't drop the file on the main page.
-= form_for :images do |f|
-  = f.file_field :file 
-  = f.submit 'Send ↗'
+= form_tag '/upload', :multipart => true do
+  = file_field_tag :file 
+  = submit_tag 'Send ↗'

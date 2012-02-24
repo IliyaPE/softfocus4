@@ -16,4 +16,4 @@ $ ->
     div = mid.append '<div class="next">next demo</div>'
     div.click -> cycle_demo()
   $("select, input:checkbox, input:radio, input:file").uniform();
-
+  $("#dropbox").html5Uploader name: "file", postUrl: "/upload"

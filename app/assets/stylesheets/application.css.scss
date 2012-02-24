@@ -136,6 +136,7 @@ form {
 .left {
   float: left;
   width: 410px;
+  position: relative;
   .drop-here {
     background: transparent url('curved_arrow.png') 30px 10px no-repeat;
     padding: 30px 0 0 120px;
@@ -148,6 +149,24 @@ form {
     }
   }  
 }
+
+#dropbox {
+  width: 400px;
+  height: 267px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  line-height: 266px;
+  font-size: 2em;
+  color: white;
+  top: 3px;
+  left: 3px;
+  opacity: 0;
+  &.drop-over {
+    opacity: 1;
+  }
+}
+
 .middle {
   float: left;
   width: $layout-width - 410 - 410;

@@ -7,3 +7,12 @@
 .right
   %h2.hat Why this website?
   %p I build this website because there is no <strong>simple</strong> way for people to play with soft focus effet. I want to allow everybody to use it <strong>wihtout</strong> any photo editing skills. It's a <strong>fun</strong> effect a lot a people ignore which make your photos look more <strong>dreamy</strong>.
+  - if Rails.env.development?
+    %br
+    - for image in Image.all
+      %p
+        = image.owner.ip
+        - if image.file?
+          = image_tag image.file.url :half
+        - else
+          no file
