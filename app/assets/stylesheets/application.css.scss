@@ -167,6 +167,14 @@ form {
   }
 }
 
+#progress {
+  position: absolute;
+  display: none;
+  top: 200px;
+  left: 50px;
+  width: 300px;
+}
+
 .middle {
   float: left;
   width: $layout-width - 410 - 410;
@@ -203,8 +211,11 @@ form {
   background: transparent url('shadow.png') center bottom no-repeat;
   padding-bottom: 16px;
   img {
+    margin: 0 auto;
     border: 3px solid white;
     display: block;
+    max-width: 400px;
+    max-height: 300px;
   }
 }
 

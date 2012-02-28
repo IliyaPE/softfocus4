@@ -1,4 +1,4 @@
-﻿(function ($) {
+(function ($) {
 
     $.fn.html5Uploader = function (options) {
 
