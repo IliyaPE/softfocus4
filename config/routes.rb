@@ -7,6 +7,7 @@ Softfocus::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
   match 'legacy' => 'images#new', :as => :legacy, :defaults => {:mode => :legacy}
   match 'upload' => 'images#create', :as => :upload, :via => :post
+  match 'result' => 'images#show', :as => :result
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

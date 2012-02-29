@@ -1,0 +1,21 @@
+- if @image
+  .intro
+    .left
+      .picture= image_tag @image.file.url :half
+      #dropbox You can drop now
+      %progress#progress{:max => 100, :value => 60}
+      .drop-here
+        %h2 This is your picture
+        %p
+          Drop another one to change
+          %br
+          or use the
+          = link_to 'legacy upload form', legacy_path
+    .middle
+    .right
+      .picture= image_tag @image.file.url :soft
+- else
+  %p You do not have any uploaded pictures
+  %p
+    Go back to the
+    = link_to 'main page', root_path

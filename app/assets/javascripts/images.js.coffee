@@ -35,7 +35,7 @@ processed = (e, file, response)->
 
 
 $ ->
-  if mid = $('.middle')
+  if mid = $('.middle.demo')
     div = mid.append '<div id="next_demo" class="next">next demo</div>'
     div.click -> cycle_demo()
   $("select, input:checkbox, input:radio, input:file").uniform();
