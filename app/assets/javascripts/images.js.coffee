@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+# Cycle through demo images set
 cycle_demo = ->
   regexp = /\d/
   img = $('.intro .left img')
@@ -21,22 +22,49 @@ preview = (e, file)->
 progress = (e, file)->
   if e.lengthComputable
     percentComplete = (e.loaded / e.total) * 100;
-    $('#progress').fadeIn('fast');
-    $('#progress').attr("value", percentComplete);
+    $('#upload-progress').fadeIn('fast');
+    $('#upload-progress').attr("value", percentComplete);
     if percentComplete >= 100
       uploaded(e, file)
 
 # Upload done
 uploaded = (e, file)->
-  $('#progress').fadeOut('fast');
+  $('#upload-progress').fadeOut('fast');
+  $('#process-progress').fadeIn('fast');
+  
   
 # Image processed and returned
 processed = (e, file, response)->
+  $('#process-progress').fadeOut('fast');
+  window.location = '/result'
 
+# Add javascript upload info markup
+prepare_loader = ->
+  left = $('.intro .left')
+  right = $('.intro .right')
+  if left and right
+    left.append '<div id="dropbox"><p>You can drop now</p></div><progress id="upload-progress" max="100" value="60"></progress>'
+    img = left.find('img')
+    img.load ->
+      if this.width > 0 and this.height > 0
+        left.find('#dropbox').css {width: this.width, height: this.height, left: $(this).position().left + 3}
+        left.find('.picture').css {'background-size': this.width + 'px 16px'}
+        $('.intro .middle').css 'height', this.height
+      else
+        setTimeout("$('.intro .left img').trigger('load')", 100)
+    right.append '<div id="process-progress"><p>Generating preview...</p></div>'
+    img2 = right.find('img')
+    img2.load ->
+      if this.width > 0 and this.height > 0
+        right.find('#process-progress').css {width: this.width, height: this.height, left: $(this).position().left + 3}
+        right.find('.picture').css {'background-size': this.width + 'px 16px'}
+      else
+        setTimeout("$('.intro .right img').trigger('load')", 100)
 
 $ ->
   if mid = $('.middle.demo')
     div = mid.append '<div id="next_demo" class="next">next demo</div>'
     div.click -> cycle_demo()
+  prepare_loader()
   $("select, input:checkbox, input:radio, input:file").uniform();
   $("#dropbox").html5Uploader name: "file", postUrl: "/upload", onClientLoad: preview, onServerProgress: progress, onSuccess: processed

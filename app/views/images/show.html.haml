@@ -2,8 +2,6 @@
   .intro
     .left
       .picture= image_tag @image.file.url :half
-      #dropbox You can drop now
-      %progress#progress{:max => 100, :value => 60}
       .drop-here
         %h2 This is your picture
         %p
@@ -15,7 +13,15 @@
     .right
       .picture= image_tag @image.file.url :soft
 - else
-  %p You do not have any uploaded pictures
+  %h2 You do not have any uploaded pictures now
   %p
-    Go back to the
-    = link_to 'main page', root_path
+    Maybe you're looking for the 
+    = link_to 'home page', root_path
+    of this website.
+  %h2 But I just sent one??
+  %p
+    If you get this message after <strong>uploading</strong> a picture you should check your <strong>cookies</strong> settings, they are <strong>required</strong> for this website to work.
+  %p
+    You can
+    = link_to 'retry here', root_path
+    with your new settings or another picture.

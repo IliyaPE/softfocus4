@@ -47,12 +47,11 @@ strong {
   color: white;
 }
 
-section#main {
-  display: block;
-  background: $background url('bokeh.jpg') center center;
-  height: 650px;
+section#head {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.5em 0;
+  margin-bottom: 3em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
 }
 
 header, footer, div.content {
@@ -62,22 +61,29 @@ header, footer, div.content {
 }
 
 header {
-  padding: 1em 0;
-  margin-bottom: 2em;
   h1 {
-    height: 85px;
     color: $text;
     font-weight: 400;
-    font-size: 4em;
-    letter-spacing: 7px;
+    font-size: 2.5em;
+    display: inline;
     em {
       font-style: normal;
       color: white;
     }
   }
   p {
-    font-size: 1.1em;
+    float: right;
+    line-height: 2.5em;
   }
+}
+
+section#main {
+  display: block;
+  background: $background url('bokeh.jpg') center center;
+  min-height: 600px;
+  max-height: 800px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
 }
 
 footer {
@@ -150,24 +156,30 @@ form {
   }  
 }
 
-#dropbox {
+#dropbox, #process-progress {
   width: 400px;
   height: 267px;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  line-height: 266px;
   font-size: 2em;
   color: white;
   top: 3px;
   left: 3px;
   opacity: 0;
+  vertical-align: middle;
   &.drop-over {
     opacity: 1;
   }
+  p {
+    position: relative;
+    top: 50%;
+    margin-top: -1em;
+    text-align: center;
+  }
 }
 
-#progress {
+#upload-progress {
   position: absolute;
   display: none;
   top: 200px;
@@ -175,11 +187,16 @@ form {
   width: 300px;
 }
 
+#process-progress {
+  display: none;
+  opacity: 1;
+}
+
 .middle {
   float: left;
   width: $layout-width - 410 - 410;
   height: 300px;
-  background: transparent url('rarrow.png') 40px 120px no-repeat;
+  background: transparent url('rarrow.png') 40px center no-repeat;
   position: relative;
   .next {
     background-color: $background;
@@ -203,6 +220,7 @@ form {
 }
 .right {
   float: right;
+  position: relative;
   width: 410px;
 }
 
@@ -215,7 +233,7 @@ form {
     border: 3px solid white;
     display: block;
     max-width: 400px;
-    max-height: 300px;
+    max-height: 400px;
   }
 }
 

@@ -18,6 +18,6 @@ class ImagesController < ApplicationController
   
 protected
   def last_image
-    Image.find(session[:image_id]) if session[:image_id]
+    Image.find(session[:image_id]) if session[:image_id] rescue nil
   end
 end
