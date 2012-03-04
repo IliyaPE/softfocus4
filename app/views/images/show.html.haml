@@ -12,6 +12,12 @@
     .middle
     .right
       .picture= image_tag @image.file.url :soft
+      .download
+        = link_to 'Download result', @image.file.url(:soft), :class => 'button'
+        %p
+          Click here to download the resulting file
+          %br
+          (limited to 1024px)
 - else
   %h2 You do not have any uploaded pictures now
   %p

@@ -19,6 +19,35 @@ $text: #ddccc0;
 $link: #a79;
 $font: 'Yanone Kaffeesatz', sans-serif;
 
+@mixin border-radius($radius: 5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+@mixin vertical-gradient($startColor: #555, $endColor: #333) {
+  background-color: mix($startColor, $endColor, 60%);
+  background-image: -moz-linear-gradient(top, $startColor, $endColor);
+  background-image: -ms-linear-gradient(top, $startColor, $endColor);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor));
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+  background-image: -o-linear-gradient(top, $startColor, $endColor);
+  background-image: linear-gradient(top, $startColor, $endColor);
+  background-repeat: repeat-x;
+}
+
+@mixin button-look($primaryColor, $secondaryColor) {
+  @include vertical-gradient($primaryColor, $secondaryColor);
+  border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
+}
+
 body {
   font-family: $font;
   font-weight: 300;
@@ -35,6 +64,24 @@ p {
 a {
   color: $link;
   text-decoration: none;
+  &.button {
+    font-size: 1.2em;
+    font-weight: normal;
+    padding: 3px 10px;
+    line-height: 30px;
+    display: block;
+    color: darken($text, 50%);
+    @include border-radius(3px);
+    $shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.8);
+    @include box-shadow($shadow);
+    @include button-look($text, darken($text, 15%));
+    text-shadow: 0 1px 1px rgba(255,255,255,.75);
+    border: 1px solid darken($text, 30%);
+    border-bottom-color: darken($text, 40%);
+    &:hover {
+      background-color: #736;
+    }
+  }
 }
 
 a:hover {
@@ -120,7 +167,7 @@ form {
     border: 2px solid white;
     color: white;
     font-family: $font;
-    border-radius: 3px;
+    @include border-radius(3px);
     font-size: 1em;
     line-height: 1.8em;
     padding: 0 0.5em;
@@ -206,7 +253,7 @@ form {
     text-align: center;
     line-height: 20px;
     color: white;
-    border-radius: 37px;
+    @include border-radius(37px);
     font-weight: normal;
     border: 2px solid white;
     cursor: pointer;
@@ -222,6 +269,22 @@ form {
   float: right;
   position: relative;
   width: 410px;
+  .download {
+    background: transparent url('lcurved_arrow.png') 280px 30px no-repeat;
+    padding: 30px 150px 0 0;
+    text-align: right;
+    height: 120px;
+    a {
+      /*background-image: url('download.png');*/
+      margin-bottom: 0.5em;
+      float: right;
+    }
+    p {
+      clear: both;
+      color: $text;
+      text-align: right;
+    }
+  }  
 }
 
 .picture {
