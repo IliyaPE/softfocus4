@@ -139,6 +139,7 @@
                     dashes + boundary + dashes;
 
                 xmlHttpRequest.setRequestHeader("Content-Type", "multipart/form-data;boundary=" + boundary);
+                xmlHttpRequest.setRequestHeader("Accept", "application/json");
                 xmlHttpRequest.sendAsBinary(data);
 
             } else if (window.FormData) { // Chrome

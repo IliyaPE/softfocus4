@@ -6,11 +6,17 @@ module Paperclip
     end
   
     def transformation_command
-      [] + super + [softblur]
+      [] + super + [softblur, quality_flag]
+    end
+    
+    def quality_flag
+      '-quality 95'
     end
     
     def softblur
-      "\\( -clone 0 -morphology Convolve 'Blur:0x5>' \\) -compose blend -define compose:args=40,60% -brightness-contrast 0x12% -composite" if @softblur
+      img_size = @target_geometry.larger
+      blur_size = img_size / 150
+      "\\( -clone 0 -morphology Convolve 'Blur:0x#{blur_size}>' \\) -compose blend -define compose:args=40,60% -brightness-contrast 0x12% -composite" if @softblur
     end
   end
 end

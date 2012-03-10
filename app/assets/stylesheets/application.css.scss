@@ -72,14 +72,22 @@ a {
     display: block;
     color: darken($text, 50%);
     @include border-radius(3px);
-    $shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.8);
+    $shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.8);
     @include box-shadow($shadow);
     @include button-look($text, darken($text, 15%));
     text-shadow: 0 1px 1px rgba(255,255,255,.75);
     border: 1px solid darken($text, 30%);
     border-bottom-color: darken($text, 40%);
     &:hover {
-      background-color: #736;
+      @include button-look(lighten($text, 15%), darken($text, 0%));
+      color: darken($text, 50%);      
+    }
+    &:active {
+      $shadow: inset 0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.8);
+      @include box-shadow($shadow);
+      @include button-look(darken($text, 20%), darken($text, 15%));
+      border-color: rgba(0, 0, 0, 0.5);
+      color: darken($text, 60%);
     }
   }
 }

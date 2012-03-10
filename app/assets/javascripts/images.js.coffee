@@ -36,7 +36,8 @@ uploaded = (e, file)->
 # Image processed and returned
 processed = (e, file, response)->
   $('#process-progress').fadeOut('fast');
-  window.location = '/result'
+  obj = JSON.parse(response)
+  window.location = '/' + obj['id']
 
 # Add javascript upload info markup
 prepare_loader = ->
