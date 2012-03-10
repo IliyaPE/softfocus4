@@ -64,8 +64,16 @@ prepare_loader = ->
 
 $ ->
   if mid = $('.middle.demo')
-    div = mid.append '<div id="next_demo" class="next">next demo</div>'
-    div.click -> cycle_demo()
+    mid.append '<a id="next_demo" class="button">↺ Next demo</a>'
+    mid.find('a').click -> cycle_demo()
   prepare_loader()
   $("select, input:checkbox, input:radio, input:file").uniform();
   $("#dropbox").html5Uploader name: "file", postUrl: "/upload", onClientLoad: preview, onServerProgress: progress, onSuccess: processed
+  $(".download a").click ->
+    text = $(this).text().replace("⇣", "✓");
+    $(this).text(text);
+    if ($(this).hasClass('disabled'))
+      $(this).attr('href', 'javascript: void(0);');
+      return false;
+    else
+      $(this).addClass('disabled');
