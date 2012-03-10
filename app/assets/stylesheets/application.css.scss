@@ -80,6 +80,7 @@ p {
 
 a {
   color: $link;
+  @include smooth(color, 0.2s);
   text-decoration: none;
   &.button {
     font-size: 1.2em;

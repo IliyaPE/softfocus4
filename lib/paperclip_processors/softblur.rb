@@ -15,8 +15,12 @@ module Paperclip
     
     def softblur
       img_size = @target_geometry.larger
-      blur_size = img_size / 150
-      "\\( -clone 0 -morphology Convolve 'Blur:0x#{blur_size}>' \\) -compose blend -define compose:args=40,60% -brightness-contrast 0x12% -composite" if @softblur
+      kernel = (img_size * image.blur / 1000).round
+      "\\( -clone 0 -morphology Convolve 'Blur:0x#{kernel}>' \\) -compose blend -define compose:args=#{image.alpha},#{100 - image.alpha}% -brightness-contrast 0x10% -composite" if @softblur
+    end
+    
+    def image
+      @attachment.instance
     end
   end
 end

@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
   end
 
   def download
-    send_file @image.file.path(:soft_1k), :type=>"image/jpeg"
+    send_file @image.file.path(:softfocus), :type=>"image/jpeg"
   end
 
   def new

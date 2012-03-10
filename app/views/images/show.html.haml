@@ -11,7 +11,7 @@
           = link_to 'legacy upload form', legacy_path
     .middle
     .right
-      .picture= image_tag @image.file.url :soft
+      .picture= image_tag @image.file.url :halfsoft
       .download
         = link_to '⇣ Download image', download_path(@image), :class => 'button'
         %p
