@@ -37,5 +37,7 @@ protected
     else
       # not found
     end
+  rescue Mongoid::Errors::DocumentNotFound
+    @image = nil
   end
 end
