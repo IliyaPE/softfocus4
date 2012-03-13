@@ -5,6 +5,8 @@ class ImagesController < ApplicationController
   end
 
   def download
+    # result file download proxy
+    @image.update_attribute :downloaded_at, Time.now
     send_file @image.file.path(:softfocus), :type=>"image/jpeg"
   end
 
@@ -14,14 +16,9 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new :file => params[:file], :owner_attributes => {:ip => request.remote_ip}
     if @image.save
-#      session[:image_id] = @image.id
       respond_to do |format|
-        format.json do
-          render :json => @image.to_json
-        end
-        format.html do
-          redirect_to result_path(@image)
-        end
+        format.json { render :json => @image.to_json }    # Ajax upload
+        format.html { redirect_to result_path(@image) }   # Legacy upload
       end
     else
       render :text => 'fail'
@@ -32,7 +29,7 @@ protected
   def fetch_image
     if params[:id].present? and @image = Image.find(params[:id])
       if @image.owner.ip != request.remote_ip
-        # forbidden
+        forbidden
       end
     else
       not_found

@@ -5,7 +5,7 @@ class Image
 
   field :blur, :type => Integer, :default => 6            # Blur kernel width
   field :alpha, :type => Float, :default => 40            # Blurred layer alpha
-  field :dowloaded_at, :type => DateTime
+  field :downloaded_at, :type => DateTime
   embeds_one :owner
 
   accepts_nested_attributes_for :owner
