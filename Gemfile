@@ -12,8 +12,9 @@ group :assets do
 end
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.6"
-  gem "webrat"
+  gem 'rspec-rails', '~> 2.6'
+  gem 'capybara'
+  gem 'capybara-webkit'
 end
 
 gem 'jquery-rails'

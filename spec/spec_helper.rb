@@ -8,6 +8,8 @@ require 'rspec/autorun'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+Capybara.javascript_driver = :webkit
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -29,4 +31,8 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+end
+
+def new_image opts = {}
+  Image.new({:file => File.open("spec/fixtures/jpn_すべての人間は.png"), :owner_attributes => {:ip => '127.0.0.1'}}.merge(opts))
 end
