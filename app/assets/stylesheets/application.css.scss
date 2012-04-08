@@ -65,6 +65,50 @@ $font: 'Yanone Kaffeesatz', sans-serif;
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
 }
 
+@mixin nice-button-hover {
+  @include button-look(lighten($text, 15%), darken($text, 0%));
+  color: darken($text, 50%);  
+}
+
+@mixin nice-button-active {
+  $shadow: 0 1px 2px rgba(0,0,0,0.8);
+  @include box-shadow($shadow);
+  @include button-look(darken($text, 20%), darken($text, 15%));
+  border-color: rgba(0, 0, 0, 0.5);
+  color: darken($text, 60%);
+}
+
+@mixin nice-button-disabled {
+  color: #888;
+  @include smooth(all, 1s);
+  $shadow: 0 1px 2px rgba(0,0,0,0.8);
+  @include box-shadow($shadow);
+  @include button-look(#bbb, #ddd);
+  cursor: default;
+}
+
+@mixin nice-button {
+  font-size: 1.2em;
+  font-weight: normal;
+  padding: 3px 10px;
+  line-height: 30px;
+  display: block;
+  color: darken($text, 50%);
+  @include border-radius(3px);
+  $shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.8);
+  @include box-shadow($shadow);
+  @include button-look($text, darken($text, 15%));
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  border: 1px solid darken($text, 30%);
+  border-bottom-color: darken($text, 40%);
+  cursor: pointer;
+  text-align: center;
+  @include user-select(none);
+  &:hover { @include nice-button-hover; }
+  &:active { @include nice-button-active; }
+  &.disabled { @include nice-button-disabled; }
+}
+
 body {
   font-family: $font;
   font-weight: 300;
@@ -83,41 +127,7 @@ a {
   @include smooth(color, 0.2s);
   text-decoration: none;
   &.button {
-    font-size: 1.2em;
-    font-weight: normal;
-    padding: 3px 10px;
-    line-height: 30px;
-    display: block;
-    color: darken($text, 50%);
-    @include border-radius(3px);
-    $shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.8);
-    @include box-shadow($shadow);
-    @include button-look($text, darken($text, 15%));
-    text-shadow: 0 1px 1px rgba(255,255,255,.75);
-    border: 1px solid darken($text, 30%);
-    border-bottom-color: darken($text, 40%);
-    cursor: pointer;
-    text-align: center;
-    @include user-select(none);
-    &:hover {
-      @include button-look(lighten($text, 15%), darken($text, 0%));
-      color: darken($text, 50%);      
-    }
-    &:active {
-      $shadow: 0 1px 2px rgba(0,0,0,0.8);
-      @include box-shadow($shadow);
-      @include button-look(darken($text, 20%), darken($text, 15%));
-      border-color: rgba(0, 0, 0, 0.5);
-      color: darken($text, 60%);
-    }
-    &.disabled {
-      color: #888;
-      @include smooth(all, 1s);
-      $shadow: 0 1px 2px rgba(0,0,0,0.8);
-      @include box-shadow($shadow);
-      @include button-look(#bbb, #ddd);
-      cursor: default;
-    }
+    @include nice-button;
   }
 }
 
@@ -198,21 +208,38 @@ section#misc {
 
 form {
   margin: 1em 0;
-  font-size: 1.2em;
   input[type=submit] {
-    background-color: $background;
-    border: 2px solid white;
-    color: white;
+    @include nice-button;
     font-family: $font;
-    @include border-radius(3px);
-    font-size: 1em;
-    line-height: 1.8em;
-    padding: 0 0.5em;
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
-    &:hover {
-      background-color: #736;
+  }
+  .uploader {
+    margin-right: 0.5em;
+    .filename {
+      width: 20em;
+      background-color: white;
+      color: black;
+      font-size: 1.2em;
+      font-weight: normal;
+      padding: 4px 10px;
+      line-height: 30px;
+      @include box-shadow(inset 0 0 3px #444);
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      text-shadow: none;
+    }
+    .action {
+      @include nice-button;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &:hover .action {
+      @include nice-button-hover;
+    }
+    &:active .action {
+      @include nice-button-active;
     }
   }
 }
