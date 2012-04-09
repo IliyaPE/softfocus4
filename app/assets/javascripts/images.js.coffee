@@ -1,7 +1,3 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-
 # Cycle through demo images set
 cycle_demo = ->
   regexp = /\d/
@@ -14,8 +10,12 @@ cycle_demo = ->
 
 # Preview uploading file
 preview = (e, file)->
+  $('.intro .left .error').remove()
   img = $('.intro .left img')
-  img.attr('src', e.target.result)
+  if file.type.match('image.*')
+    img.attr('src', e.target.result)
+  else
+    img.attr("src", '/assets/error.png')
   $('#next_demo').fadeOut('fast')
 
 # View load progression
@@ -48,6 +48,8 @@ processed = (e, file, response)->
 prepare_loader = ->
   left = $('.intro .left')
   right = $('.intro .right')
+  # Error image preload
+  error = $('<img />').attr('src', '/assets/error.png')
   if left and right
     left.append '<div id="dropbox"><p>You can drop now</p></div><progress id="upload-progress" max="100" value="60"></progress>'
     img = left.find('img')

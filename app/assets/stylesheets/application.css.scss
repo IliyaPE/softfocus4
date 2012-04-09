@@ -295,6 +295,7 @@ form {
   left: 3px;
   opacity: 0;
   vertical-align: middle;
+  z-index: 2;
   &.drop-over {
     opacity: 1;
   }
