@@ -45,17 +45,6 @@ before_fork do |server, worker|
 end
 
 after_fork do |server, worker|
-  ##
-  # Unicorn master loads the app then forks off workers - because of the way
-  # Unix forking works, we need to make sure we aren't using any of the parent's
-  # sockets, e.g. db connection
-
-  ActiveRecord::Base.establish_connection
-
-  ##
-  # Unicorn master is started as root, which is fine, but let's
-  # drop the workers to deploy:deploy
-
   begin
     uid, gid = Process.euid, Process.egid
     user, group = 'deploy', 'deploy'
