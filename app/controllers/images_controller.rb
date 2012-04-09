@@ -22,7 +22,7 @@ class ImagesController < ApplicationController
       end
     else
       respond_to do |format|
-        format.json { render :json => {:errors => @image.errors} }    # Ajax upload
+        format.json { render :json => {:error => @image.error_message} }    # Ajax upload
         format.html { params[:mode] = :legacy; render :new }   # Legacy upload
       end
     end

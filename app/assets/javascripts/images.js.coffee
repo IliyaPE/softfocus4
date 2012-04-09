@@ -16,28 +16,33 @@ cycle_demo = ->
 preview = (e, file)->
   img = $('.intro .left img')
   img.attr('src', e.target.result)
-  $('#next_demo').fadeOut('fast');
+  $('#next_demo').fadeOut('fast')
 
 # View load progression
 progress = (e, file)->
   if e.lengthComputable
     percentComplete = (e.loaded / e.total) * 100;
-    $('#upload-progress').fadeIn('fast');
-    $('#upload-progress').attr("value", percentComplete);
+    $('#upload-progress').fadeIn('fast')
+    $('#upload-progress').attr("value", percentComplete)
     if percentComplete >= 100
       uploaded(e, file)
 
 # Upload done
 uploaded = (e, file)->
-  $('#upload-progress').fadeOut('fast');
-  $('#process-progress').fadeIn('fast');
+  $('#upload-progress').fadeOut('fast')
+  $('#process-progress').fadeIn('fast')
   
   
 # Image processed and returned
 processed = (e, file, response)->
-  $('#process-progress').fadeOut('fast');
+  $('#process-progress').fadeOut('fast')
   obj = JSON.parse(response)
-  window.location = '/' + obj['id']
+  if obj['id']
+    window.location = '/' + obj['id']
+  else
+    img = $('.intro .left img')
+    img.attr('src', '/assets/error.png')
+    $('.intro .left').append('<div class="error">' + obj['error'] + '</div>')
 
 # Add javascript upload info markup
 prepare_loader = ->

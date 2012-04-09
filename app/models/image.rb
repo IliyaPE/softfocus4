@@ -32,4 +32,16 @@ class Image
       :alpha => alpha
     }
   end
+
+  def error_message
+    if errors[:file_content_type].present?
+      "This is not an image ! currently supported formats are jpg, jpeg, png & gif."
+    elsif errors[:file].present?
+      "I think you should select a file first, it's not THAT magical."
+    elsif errors[:file_file_size].present?
+      "This file is too big ! the current size limit is #{SIZE_LIMIT/1024/1024} MB."
+    else
+      nil
+    end
+  end
 end

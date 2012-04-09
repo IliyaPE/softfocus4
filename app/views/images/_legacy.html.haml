@@ -4,9 +4,4 @@
   = file_field_tag :file 
   = submit_tag 'Send ↗'
   - if @image and @image.errors.any?
-    - if @image.errors[:file_content_type].present?
-      .error This is not an image ! currently supported formats are jpg, jpeg, png & gif.
-    - elsif @image.errors[:file].present?
-      .error I think you should select a file first, it's not THAT magical.
-    - elsif @image.errors[:file_file_size].present?
-      .error This file is too big ! the current size limit is #{number_to_human_size(Image::SIZE_LIMIT)}.
+    .error= @image.error_message
