@@ -1,5 +1,4 @@
 require 'capistrano_colors'
-require 'capistrano-file_db'
 require 'bundler/capistrano'
 load 'deploy/assets'
 
