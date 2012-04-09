@@ -4,6 +4,9 @@ gem 'rails', '3.2.1'
 gem 'json'
 gem 'mongoid', '~> 2.4'
 gem 'bson_ext', '~> 1.5'
+gem 'jquery-rails'
+gem 'haml', '~> 3.1.4'
+gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -12,12 +15,14 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'capistrano'
+  gem 'capistrano_colors'
   gem 'rspec-rails', '~> 2.6'
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'thin'
 end
 
-gem 'jquery-rails'
-gem 'thin'
-gem 'haml', '~> 3.1.4'
-gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+group :production do
+  gem 'unicorn'
+end
