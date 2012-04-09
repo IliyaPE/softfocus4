@@ -21,7 +21,10 @@ class ImagesController < ApplicationController
         format.html { redirect_to result_path(@image) }   # Legacy upload
       end
     else
-      render :text => 'fail'
+      respond_to do |format|
+        format.json { render :json => {:errors => @image.errors} }    # Ajax upload
+        format.html { params[:mode] = :legacy; render :new }   # Legacy upload
+      end
     end
   end
   

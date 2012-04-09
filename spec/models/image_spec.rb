@@ -15,4 +15,16 @@ describe Image do
       File.exists?(img.file.path(style)).should == true
     end
   end
+
+  it "errors on invalid image" do
+    img = new_image :file => File.open("spec/fixtures/invalid.txt")
+    img.save.should == false
+    img.errors[:file_content_type].should_not be_empty
+  end
+
+  it "errors without image" do
+    img = new_image :file => nil
+    img.save.should == false
+    img.errors[:file_file_name].should_not be_empty
+  end
 end

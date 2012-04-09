@@ -3,6 +3,8 @@ class Image
   include Mongoid::Timestamps
   include Mongoid::Paperclip
 
+  SIZE_LIMIT = 10.megabytes
+
   field :blur, :type => Integer, :default => 6            # Blur kernel width
   field :alpha, :type => Float, :default => 40            # Blurred layer alpha
   field :downloaded_at, :type => DateTime
@@ -18,7 +20,11 @@ class Image
       :softfocus => {:geometry => '1024x1024>', :format => :jpg, :softblur => true},
     },
     :processors => [:softblur]
-  
+
+  validates_attachment_presence :file
+  validates_attachment_content_type :file, :content_type => ['image/jpg', 'image/png', 'image/gif', 'image/jpeg']
+  validates_attachment_size :file, :in => 0..SIZE_LIMIT
+
   def as_json opts = {}
     {
       :id => _id,

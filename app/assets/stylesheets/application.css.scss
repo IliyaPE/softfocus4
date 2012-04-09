@@ -244,6 +244,15 @@ form {
   }
 }
 
+.error {
+  background: transparent url('warning.png') left center no-repeat;
+  padding-left: 40px;
+  line-height: 40px;
+  margin-top: 0.5em;
+  color: #fa6;
+  font-weight: normal;
+}
+
 .content:after {
   clear: both;
   content: '';
