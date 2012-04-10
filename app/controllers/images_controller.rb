@@ -18,7 +18,7 @@ class ImagesController < ApplicationController
     if @image.save
       respond_to do |format|
         format.json { render :json => @image.to_json }    # Ajax upload
-        format.html { puts 'legacy'; redirect_to result_path(@image) }   # Legacy upload
+        format.html { redirect_to result_path(@image) }   # Legacy upload
       end
     else
       respond_to do |format|
@@ -31,7 +31,7 @@ class ImagesController < ApplicationController
 protected
   def fetch_image
     if params[:id].present? and @image = Image.find(params[:id])
-      if @image.owner.ip != request.remote_ip
+      if @image.owner.ip != request.remote_ip and not authenticated?
         forbidden
       end
     else

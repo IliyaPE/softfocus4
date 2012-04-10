@@ -1,0 +1,22 @@
+!!!
+%html
+%head
+  %title SoftFocus
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,700,200', "application", :media => "all"
+  = javascript_include_tag "application"
+  = favicon_link_tag "/favicon.png"
+  = csrf_meta_tags
+%body.admin
+  %section#main
+    %section#head
+      %header
+        %h1
+          = link_to raw("<em>Soft</em>Focus"), "/"
+        %p Admin
+  %section#misc
+    %div.content= yield
+    %footer
+      Designed, built & hosted by 
+      = link_to 'Adrien Jarthon', 'http://adrienjarthon.com'
+      \- Report any issue to 
+      = mail_to 'support@softfocus.me', 'support@softfocus.me', :encode => :hex

@@ -1,0 +1,47 @@
+// Place all the styles related to the admin/images controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin {
+  section#main {
+    min-height: 0;
+    #head {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  figure {
+    font-family: ubuntu, sans;
+    position: relative;
+    float: left;
+    padding: 6px;
+    margin: 8px;
+    background-color: black;
+    border: 1px solid #222;
+    color: black;
+    img {
+      width: 220px;
+      height: 220px;
+    }
+    figcaption {
+      position: absolute;
+      top: 187px;
+      height: 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 210px;
+      padding: 5px;
+      color: white;
+      line-height: 15px;
+      font-size: 12px;
+      .ip {}
+      .date {
+        float: right;
+      }
+      .download {
+        float: right;
+        clear: both;
+      }
+    }
+  }
+}

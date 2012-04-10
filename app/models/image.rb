@@ -15,6 +15,7 @@ class Image
   has_mongoid_attached_file :file,
     :url => "/system/:class/:id_partition/:basename-:style.:extension",
     :styles => {
+      :mini => {:geometry => '220x220#', :format => :jpg},
       :half => {:geometry => '400x400>', :format => :jpg},
       :halfsoft => {:geometry => '400x400>', :format => :jpg, :softblur => true},
       :softfocus => {:geometry => '1024x1024>', :format => :jpg, :softblur => true},
