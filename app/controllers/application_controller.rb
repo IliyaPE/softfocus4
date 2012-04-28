@@ -15,8 +15,10 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate
-    if !check_login
+    if not authenticated? and not check_login
       request_http_basic_authentication
+    else
+      true
     end
   end
   
