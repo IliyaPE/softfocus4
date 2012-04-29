@@ -84,7 +84,7 @@ $ ->
       return false;
     else
       $(this).addClass('disabled');
-  $("form input[type=submit]").click ->
+  $("form.legacy input[type=submit]").click ->
     $(this).attr("value", "Sending ... ⌛");
     if ($(this).hasClass('disabled'))
       $(this).attr('href', 'javascript: void(0);');
