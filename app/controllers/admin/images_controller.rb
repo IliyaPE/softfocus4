@@ -9,6 +9,11 @@ class Admin::ImagesController < ApplicationController
   def index
     @images = Image.order_by(:created_at => :desc).all
   end
+
+  def destroy
+    @image.destroy
+    redirect_to admin_images_path
+  end
   
 protected
   def fetch_image

@@ -1,6 +1,7 @@
 %figure
   = link_to result_path(image) do
     = image_tag image.file(:mini)
+    = button_to '✘', admin_image_path(image), :confirm => 'Really ?', :method => :delete
     %figcaption
       %span.ip= '⇨ ' + image.owner.ip
       %span.date= l(image.created_at, :format => :short) + ' ⌚'
