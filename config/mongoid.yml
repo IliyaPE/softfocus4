@@ -9,3 +9,5 @@ test:
 production:
   host: localhost
   database: softfocus_production
+  username: softfocus
+  password: gWhi31D6j74EhdN
