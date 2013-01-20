@@ -25,6 +25,6 @@ describe Image do
   it "errors without image" do
     img = new_image :file => nil
     img.save.should == false
-    img.errors[:file_file_name].should_not be_empty
+    img.errors[:file].should_not be_empty
   end
 end

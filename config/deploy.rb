@@ -6,10 +6,10 @@ set :application, "Softfocus.me website"
 
 # Repository
 set :scm, :git
-set :repository,  "git@rootbox.fr:softfocus"
+set :repository,  "git@bitbucket.org:adrienjarthon/softfocus"
 
 # Server
-server "lambda.rootbox.fr", :app, :web, :db, :primary => true
+server "pi.rootbox.fr", :app, :web, :db, :primary => true
 set :user, :deploy
 set :deploy_to, "/home/deploy/softfocus"
 set :use_sudo, false

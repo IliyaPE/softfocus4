@@ -1,13 +1,27 @@
 development:
-  host: localhost
-  database: softfocus_development
+  sessions:
+    default:
+      hosts:
+        - localhost
+      database: softfocus_development
 
 test:
-  host: localhost
-  database: softfocus_test
+  sessions:
+    default:
+      hosts:
+        - localhost
+      database: softfocus_test
 
 production:
-  host: localhost
-  database: softfocus_production
-  username: softfocus
-  password: gWhi31D6j74EhdN
+  sessions:
+    default:
+      database: softfocus_production
+      hosts:
+        - pi.rootbox.fr:27017
+        - lambda.rootbox.fr:27017
+        - omicron.rootbox.fr:27017
+      username: softfocus
+      password: gWhi31D6j74EhdN
+      options:
+        safe: true
+        consistency: :strong

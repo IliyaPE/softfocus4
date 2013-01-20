@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
   before_filter :check_login
 
   protected
-  
+
   def authenticated?
     @authenticated
   end
-  
+
   def authenticate
     if not authenticated? and not check_login
       request_http_basic_authentication
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
       true
     end
   end
-  
+
   def check_login
     authenticate_with_http_basic do |username, password|
       @authenticated = (username == 'bigbourin' and Digest::SHA1.hexdigest(password) == PASSWORD)
@@ -29,10 +29,10 @@ class ApplicationController < ActionController::Base
   end
 
   def not_found
-    render :nothing => true, :status => :not_found
+    render :text => 'Not found', :status => :not_found
   end
 
   def forbidden
-    render :nothing => true, :status => :forbidden
+    render :text => 'Forbidden', :status => :forbidden
   end
 end

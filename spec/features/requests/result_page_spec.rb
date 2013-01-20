@@ -22,7 +22,7 @@ describe "result page" do
   it "should reject unknown ip" do
     @image.owner.update_attribute :ip, '8.8.4.4'
     visit result_path(@image)
-    page.status_code.should == 403
+    page.status_code.should == 401
   end
 
   it "should allow admin to view other ip" do
@@ -31,7 +31,7 @@ describe "result page" do
     visit result_path(@image)
     page.status_code.should == 200
   end
-  
+
   after :all do
     Image.destroy_all
   end

@@ -12,7 +12,7 @@ class ImagesController < ApplicationController
 
   def new
   end
-  
+
   def create
     @image = Image.new :file => params[:file], :owner_attributes => {:ip => request.remote_ip}
     if @image.save
@@ -27,12 +27,12 @@ class ImagesController < ApplicationController
       end
     end
   end
-  
+
 protected
   def fetch_image
     if params[:id].present? and @image = Image.find(params[:id])
-      if @image.owner.ip != request.remote_ip and not authenticated?
-        forbidden
+      if @image.owner.ip != request.remote_ip
+        authenticate if not authenticated?
       end
     else
       not_found

@@ -21,7 +21,7 @@ describe "download request" do
   it "should reject unknown ip" do
     @image.owner.update_attribute :ip, '8.8.4.4'
     visit download_path(@image)
-    page.status_code.should == 403
+    page.status_code.should == 401
   end
 
   it "should allow admin to download other ip" do
