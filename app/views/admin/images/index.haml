@@ -1,2 +1,15 @@
 .admin
+  #chart
+  - labels = []
+  - data = []
+  - downloads = []
+  - 60.days.ago.to_date.upto(Date.today) do |day|
+    - labels << day.to_time.to_i
+    - data << Image.where(:created_at => day.beginning_of_day..(day+1).beginning_of_day).count
+    - downloads << Image.where(:downloaded_at => day.beginning_of_day..(day+1).beginning_of_day).count
+  :javascript
+    var r = Raphael("chart", 1000, 100);
+    r.linechart(0, 0, 1000, 100, #{labels.to_json}, [#{data.to_json}, #{downloads.to_json}], {smooth: true, colors: ['#fff', '#a7a'], symbol: 'circle', width: 1});
+  = paginate @images
   = render @images
+  = paginate @images

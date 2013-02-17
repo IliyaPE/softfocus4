@@ -63,3 +63,13 @@
     }
   }
 }
+
+nav.pagination {
+  text-align: center;
+  margin: 1em 0;
+
+  span {
+    display: inline-block;
+    margin: 0 0.2em;
+  }
+}

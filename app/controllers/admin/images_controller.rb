@@ -7,14 +7,14 @@ class Admin::ImagesController < ApplicationController
   end
 
   def index
-    @images = Image.order_by(:created_at => :desc).all
+    @images = Image.order_by(:created_at => :desc).page(params[:page]).per(16).all
   end
 
   def destroy
     @image.destroy
     redirect_to admin_images_path
   end
-  
+
 protected
   def fetch_image
     if params[:id].present?

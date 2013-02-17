@@ -6,6 +6,7 @@ gem 'mongoid'
 gem 'jquery-rails', '= 2.1.3'
 gem 'haml'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+gem 'kaminari'
 
 group :assets do
   gem 'sass-rails'
