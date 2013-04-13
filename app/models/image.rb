@@ -11,7 +11,7 @@ class Image
   embeds_one :owner
 
   accepts_nested_attributes_for :owner
-  
+
   has_mongoid_attached_file :file,
     :url => "/system/:class/:id_partition/:basename-:style.:extension",
     :styles => {

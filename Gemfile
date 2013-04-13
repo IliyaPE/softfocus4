@@ -7,6 +7,7 @@ gem 'jquery-rails', '= 2.1.3'
 gem 'haml'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 gem 'kaminari'
+gem 'exception_notification'
 
 group :assets do
   gem 'sass-rails'
@@ -19,7 +20,7 @@ group :test, :development do
   gem 'capistrano_colors'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
   gem 'thin'
 end
 
