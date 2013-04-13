@@ -35,6 +35,17 @@ Softfocus::Application.configure do
     :sender_address => %{"softfocus exception" <exception@softfocus.me>},
     :exception_recipients => %w{bigbourin@gmail.com}
 
+  # OVH smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => "postmaster@rootbox.fr",
+    :password => "VCgXbi1773sE",
+    :domain => "rootbox.fr",
+    :address => "smtp.rootbox.fr",
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
   # See everything in the log (default is :info)
   # config.log_level = :debug
 
