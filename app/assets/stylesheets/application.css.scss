@@ -67,7 +67,7 @@ $font: 'Yanone Kaffeesatz', sans-serif;
 
 @mixin nice-button-hover {
   @include button-look(lighten($text, 15%), darken($text, 0%));
-  color: darken($text, 50%);  
+  color: darken($text, 50%);
 }
 
 @mixin nice-button-active {
@@ -168,6 +168,19 @@ header {
   p {
     float: right;
     line-height: 2.5em;
+  }
+}
+
+.alert {
+  color: #f94;
+  padding: 0.7em 0;
+  font-size: 1em;
+  margin-bottom: 1em;
+  font-weight: 400;
+  margin-top: -1em;
+  img {
+    vertical-align: -40%;
+    margin-right: 0.5em;
   }
 }
 

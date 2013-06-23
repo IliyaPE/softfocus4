@@ -18,7 +18,7 @@ class Image
       :mini => {:geometry => '220x220#', :format => :jpg},
       :half => {:geometry => '400x400>', :format => :jpg},
       :halfsoft => {:geometry => '400x400>', :format => :jpg, :softblur => true},
-      :softfocus => {:geometry => '1024x1024>', :format => :jpg, :softblur => true},
+      :softfocus => {:geometry => '2048x2048>', :format => :jpg, :softblur => true},
     },
     :processors => [:softblur]
 
