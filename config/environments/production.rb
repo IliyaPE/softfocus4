@@ -47,7 +47,7 @@ Softfocus::Application.configure do
   }
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
