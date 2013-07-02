@@ -18,7 +18,7 @@ production:
       database: softfocus_production
       hosts:
         - pi.rootbox.fr:27017
-        - lambda.rootbox.fr:27017
+        - gamma.rootbox.fr:27017
         - omicron.rootbox.fr:27017
       username: softfocus
       password: gWhi31D6j74EhdN
