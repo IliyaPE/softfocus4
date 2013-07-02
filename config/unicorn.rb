@@ -2,14 +2,14 @@
 
 rails_env = ENV['RAILS_ENV'] || 'production'
 
-worker_processes 1
+worker_processes 2
 
 # Load rails+github.git into the master before forking workers
 # for super-fast worker spawn times
 preload_app true
 
 # Restart any workers that haven't responded in 30 seconds
-timeout 30
+timeout 60
 
 # Listen on a Unix data socket
 listen '/home/deploy/softfocus/shared/unicorn.sock', :backlog => 2048
