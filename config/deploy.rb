@@ -1,38 +1,29 @@
-require 'capistrano_colors'
-require 'bundler/capistrano'
-load 'deploy/assets'
+# config valid only for Capistrano 3.1
+lock '3.1.0'
 
-set :application, "Softfocus.me website"
+set :application, "softfocus"
+set :repo_url, 'git@bitbucket.org:adrienjarthon/softfocus'
 
-# Repository
-set :scm, :git
-set :repository,  "git@bitbucket.org:adrienjarthon/softfocus"
+set :deploy_to, '/home/deploy/softfocus'
 
-# Server
-server "pi.rootbox.fr", :app, :web, :db, :primary => true
-set :user, :deploy
-set :deploy_to, "/home/deploy/softfocus"
-set :use_sudo, false
+# Default value for :log_level is :debug
+set :log_level, :info
 
-# rbenv
-set :default_environment, {
-  'PATH' => "/home/deploy/.rbenv/shims:/home/deploy/.rbenv/bin:$PATH"
-}
+# Default value for :linked_files is []
+# set :linked_files, %w{db/production.sqlite3}
 
-# bundler
-set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
+# Default value for linked_dirs is []
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-# unicorn commands
 namespace :deploy do
-  task :start, :roles => :app, :except => { :no_release => true } do
-    run 'sudo start softfocus'
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app) do
+      execute "sudo restart softfocus || sudo start softfocus"
+    end
   end
 
-  task :stop, :roles => :app, :except => { :no_release => true } do
-    run 'sudo stop softfocus'
-  end
+  after :publishing, :restart
 
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run 'sudo restart softfocus'
-  end
 end

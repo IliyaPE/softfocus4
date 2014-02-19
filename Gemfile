@@ -6,6 +6,7 @@ gem 'mongoid'
 gem 'jquery-rails'
 gem 'haml'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+gem 'paperclip', "~> 3.0"
 gem 'kaminari'
 gem 'exception_notification'
 
@@ -17,7 +18,6 @@ end
 
 group :test, :development do
   gem 'capistrano'
-  gem 'capistrano_colors'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'

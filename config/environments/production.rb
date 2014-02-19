@@ -30,10 +30,12 @@ Softfocus::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
-  config.middleware.use ExceptionNotifier,
-    :email_prefix => "[softfocus exception] ",
-    :sender_address => %{"softfocus exception" <exception@softfocus.me>},
-    :exception_recipients => %w{bigbourin@gmail.com}
+  config.middleware.use ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "[softfocus exception] ",
+      :sender_address => %{"softfocus exception" <exception@softfocus.me>},
+      :exception_recipients => %w{bigbourin@gmail.com}
+    }
 
   # OVH smtp
   config.action_mailer.smtp_settings = {
