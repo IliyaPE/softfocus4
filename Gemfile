@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '~> 3.2.15'
 gem 'json'
 gem 'mongoid'
-gem 'jquery-rails', '= 2.1.3'
+gem 'jquery-rails'
 gem 'haml'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 gem 'kaminari'
