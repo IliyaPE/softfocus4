@@ -18,6 +18,8 @@ end
 
 group :test, :development do
   gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
