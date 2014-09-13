@@ -1,6 +1,4 @@
-#encoding: utf-8
-
-require 'spec_helper'
+require 'rails_helper'
 
 describe "legacy page" do
   before :each do
@@ -11,21 +9,21 @@ describe "legacy page" do
     attach_file 'file', "spec/fixtures/jpn_すべての人間は.png"
     click_on 'Send'
     image = Image.last
-    current_path.should == result_path(image)
+    expect(current_path).to eq(result_path(image))
   end
 
   it "reject invalid images" do
     expect {
       attach_file 'file', "spec/fixtures/invalid.txt"
       click_on 'Send'
-      find('.error').should have_content('not an image')
+      expect(find('.error')).to have_content('not an image')
     }.not_to change(Image, :count)
   end
 
   it "reject missing files" do
     expect {
       click_on 'Send'
-      find('.error').should have_content('select a file first')
+      expect(find('.error')).to have_content('select a file first')
     }.not_to change(Image, :count)
   end
 

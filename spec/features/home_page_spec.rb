@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "home page" do
   before :each do
@@ -6,8 +6,8 @@ describe "home page" do
   end
 
   it "displays the project name & author" do
-    page.should have_selector('h1', :text => 'SoftFocus')
-    page.should have_selector('footer a', :text => 'Adrien Jarthon')
+    expect(page).to have_selector('h1', :text => 'SoftFocus')
+    expect(page).to have_selector('footer a', :text => 'Adrien Jarthon')
   end
   
   it "shows demo images and switcher", :js => true do
@@ -25,6 +25,6 @@ describe "home page" do
   
   it "shows valid legacy upload link" do
     click_on 'legacy upload form'
-    current_path.should == legacy_path
+    expect(current_path).to eq(legacy_path)
   end
 end
