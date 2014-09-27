@@ -19,9 +19,7 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app) do
-      execute "sudo restart softfocus || sudo start softfocus"
-    end
+    on(roles :app) { execute :touch, release_path.join('tmp/restart.txt') }
   end
 
   after :publishing, :restart
