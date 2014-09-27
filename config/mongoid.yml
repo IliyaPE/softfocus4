@@ -17,7 +17,7 @@ production:
     default:
       database: softfocus_production
       hosts:
-        - pi.rootbox.fr:27017
+        - alpha.rootbox.fr:27017
         - gamma.rootbox.fr:27017
         - omicron.rootbox.fr:27017
       username: softfocus
