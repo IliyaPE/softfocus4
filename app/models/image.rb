@@ -28,9 +28,9 @@ class Image
 
   def as_json opts = {}
     {
-      :id => _id,
-      :blur => blur,
-      :alpha => alpha
+      id: id.to_s,
+      blur: blur,
+      alpha: alpha
     }
   end
 

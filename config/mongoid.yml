@@ -1,27 +1,25 @@
 development:
-  sessions:
+  clients:
     default:
       hosts:
         - localhost
       database: softfocus_development
 
 test:
-  sessions:
+  clients:
     default:
       hosts:
         - localhost
       database: softfocus_test
 
 production:
-  sessions:
+  clients:
     default:
       database: softfocus_production
       hosts:
         - alpha.rootbox.fr:27017
         - gamma.rootbox.fr:27017
         - omicron.rootbox.fr:27017
-      username: softfocus
-      password: gWhi31D6j74EhdN
       options:
-        safe: true
-        consistency: :strong
+        user: softfocus
+        password: gWhi31D6j74EhdN

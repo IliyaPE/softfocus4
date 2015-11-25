@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.15'
+gem 'rails', '~> 4.2.5'
 gem 'json'
 gem 'mongoid'
 gem 'jquery-rails'
 gem 'haml'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
-gem 'paperclip', "~> 3.0"
+gem 'paperclip', "~> 4.3"
 gem 'kaminari'
 gem 'exception_notification'
 

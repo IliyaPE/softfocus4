@@ -7,7 +7,7 @@
     NEW! The output image size limit has just increase from 1024px to 2048px!
   .intro
     .left
-      .picture= image_tag "demo#{id}.jpg"
+      .picture= image_tag "/demo#{id}.jpg"
       .drop-here
         %h2 Try it now!
         %p
@@ -17,4 +17,4 @@
           = link_to 'legacy upload form', legacy_path
     .middle.demo
     .right
-      .picture= image_tag "demo#{id}-soft.jpg"
+      .picture= image_tag "/demo#{id}-soft.jpg"

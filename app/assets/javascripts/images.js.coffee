@@ -5,8 +5,8 @@ cycle_demo = ->
   id = parseInt(regexp.exec(img.attr('src'))[0])
   id += 1
   id = 1 if id > 6
-  $('.intro .left img').attr('src', "/assets/demo" + id + ".jpg")
-  $('.intro .right img').attr('src', "/assets/demo" + id + "-soft.jpg")
+  $('.intro .left img').attr('src', "/demo" + id + ".jpg")
+  $('.intro .right img').attr('src', "/demo" + id + "-soft.jpg")
 
 # Preview uploading file
 preview = (e, file)->
@@ -31,8 +31,7 @@ progress = (e, file)->
 uploaded = (e, file)->
   $('#upload-progress').fadeOut('fast')
   $('#process-progress').fadeIn('fast')
-  
-  
+
 # Image processed and returned
 processed = (e, file, response)->
   $('#process-progress').fadeOut('fast')
