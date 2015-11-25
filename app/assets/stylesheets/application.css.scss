@@ -112,7 +112,7 @@ $font: 'Yanone Kaffeesatz', sans-serif;
 body {
   font-family: $font;
   font-weight: 300;
-  background: #cbc url('bg.png');
+  background: #cbc image-url('bg.png');
   font-size: 1.2em;
   color: $text;
 }
@@ -186,7 +186,7 @@ header {
 
 section#main {
   display: block;
-  background: $background url('bokeh.jpg') center center;
+  background: $background image-url('bokeh.jpg') center center;
   min-height: 600px;
   max-height: 800px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -258,7 +258,7 @@ form {
 }
 
 .error {
-  background: transparent url('warning.png') left center no-repeat;
+  background: transparent image-url('warning.png') left center no-repeat;
   padding-left: 40px;
   line-height: 40px;
   margin-top: 0.5em;
@@ -277,7 +277,7 @@ form {
   width: 410px;
   position: relative;
   .drop-here {
-    background: transparent url('curved_arrow.png') 50px 10px no-repeat;
+    background: transparent image-url('curved_arrow.png') 50px 10px no-repeat;
     padding: 30px 0 0 140px;
     height: 120px;
     h2 {
@@ -337,7 +337,7 @@ form {
   float: left;
   width: $layout-width - 410 - 410;
   height: 300px;
-  background: transparent url('rarrow.png') 40px center no-repeat;
+  background: transparent image-url('rarrow.png') 40px center no-repeat;
   position: relative;
   #next_demo {
     position: absolute;
@@ -351,12 +351,12 @@ form {
   position: relative;
   width: 410px;
   .download {
-    background: transparent url('lcurved_arrow.png') 280px 30px no-repeat;
+    background: transparent image-url('lcurved_arrow.png') 280px 30px no-repeat;
     padding: 40px 150px 0 0;
     text-align: right;
     height: 120px;
     a {
-      /*background-image: url('download.png');*/
+      /*background-image: image-url('download.png');*/
       margin-bottom: 0.5em;
       float: right;
     }
@@ -370,7 +370,7 @@ form {
 
 .picture {
   width: 410px;
-  background: transparent url('shadow.png') center bottom no-repeat;
+  background: transparent image-url('shadow.png') center bottom no-repeat;
   padding-bottom: 16px;
   @include user-select(none);
   img {
@@ -389,19 +389,19 @@ form {
 }
 
 .camera {
-  background: transparent url('lens.png') right top no-repeat;
+  background: transparent image-url('lens.png') right top no-repeat;
   min-height: 48px;
   line-height: 48px;
 }
 
 .hat {
-  background: transparent url('hat.png') right top no-repeat;
+  background: transparent image-url('hat.png') right top no-repeat;
   min-height: 48px;
   line-height: 48px;
 }
 
 .share {
-  background: transparent url('share.png') right top no-repeat;
+  background: transparent image-url('share.png') right top no-repeat;
   min-height: 48px;
   line-height: 48px;  
 }
