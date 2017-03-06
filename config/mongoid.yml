@@ -17,9 +17,8 @@ production:
     default:
       database: softfocus_production
       hosts:
-        - alpha.rootbox.fr:27017
-        - gamma.rootbox.fr:27017
-        - omicron.rootbox.fr:27017
+        - db1.updn.io
+        - db2.updn.io
       options:
         user: softfocus
         password: gWhi31D6j74EhdN
