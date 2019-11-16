@@ -15,7 +15,7 @@ preview = (e, file)->
   if file.type.match('image.*')
     img.attr('src', e.target.result)
   else
-    img.attr("src", '/assets/error.png')
+    img.attr("src", '/error.png')
   $('#next_demo').fadeOut('fast')
 
 # View load progression
@@ -40,7 +40,7 @@ processed = (e, file, response)->
     window.location = '/' + obj['id']
   else
     img = $('.intro .left img')
-    img.attr('src', '/assets/error.png')
+    img.attr('src', '/error.png')
     $('.intro .left').append('<div class="error">' + obj['error'] + '</div>')
 
 # Add javascript upload info markup
@@ -48,7 +48,7 @@ prepare_loader = ->
   left = $('.intro .left')
   right = $('.intro .right')
   # Error image preload
-  error = $('<img />').attr('src', '/assets/error.png')
+  error = $('<img />').attr('src', '/error.png')
   if left and right
     left.append '<div id="dropbox"><p>You can drop now</p></div><progress id="upload-progress" max="100" value="60"></progress>'
     img = left.find('img')
