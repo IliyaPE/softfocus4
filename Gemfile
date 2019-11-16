@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'sassc-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 gem 'rails', '~> 4.2.5'
 gem 'json'
 gem 'mongoid'
@@ -7,14 +10,9 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 gem 'paperclip', "~> 4.3"
-gem 'kaminari'
+gem 'kaminari-mongoid'
+gem 'kaminari-actionview'
 gem 'exception_notification'
-
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
 
 group :test, :development do
   gem 'capistrano'
@@ -23,7 +21,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
-  gem 'thin'
+  gem 'puma'
 end
 
 group :production do
