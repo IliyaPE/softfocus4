@@ -15,9 +15,10 @@ gem 'kaminari-actionview'
 gem 'exception_notification'
 
 group :test, :development do
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-pending', require: false
   gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'

@@ -1,5 +1,5 @@
 set :application, "softfocus"
-set :repo_url, 'git@bitbucket.org:adrienjarthon/softfocus'
+set :repo_url, 'git@github.com:jarthod/softfocus.git'
 
 set :deploy_to, '/home/deploy/softfocus'
 
