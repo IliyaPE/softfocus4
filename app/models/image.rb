@@ -10,6 +10,9 @@ class Image
   field :downloaded_at, :type => DateTime
   embeds_one :owner
 
+  index created_at: 1
+  index downloaded_at: 1
+
   accepts_nested_attributes_for :owner
 
   has_mongoid_attached_file :file,
