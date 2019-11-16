@@ -8,8 +8,8 @@ gem 'json'
 gem 'mongoid'
 gem 'jquery-rails'
 gem 'haml'
-gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
-gem 'paperclip', "~> 4.3"
+gem 'mongoid-paperclip'
+gem 'paperclip'
 gem 'kaminari-mongoid'
 gem 'kaminari-actionview'
 gem 'exception_notification'
@@ -23,8 +23,4 @@ group :test, :development do
   gem 'capybara'
   gem 'poltergeist'
   gem 'puma'
-end
-
-group :production do
-  gem 'unicorn'
 end
