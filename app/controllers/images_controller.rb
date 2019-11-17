@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_filter :fetch_image, :only => [:show, :download]
+  before_action :fetch_image, :only => [:show, :download]
 
   def show
   end

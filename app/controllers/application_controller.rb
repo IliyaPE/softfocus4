@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   else
     '85c62f5053d51cc4407655fc9b4b377a23598414'  # Real password
   end
-  before_filter :check_login
+  before_action :check_login
 
   protected
 

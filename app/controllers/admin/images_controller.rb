@@ -1,6 +1,6 @@
 class Admin::ImagesController < ApplicationController
-  before_filter :fetch_image, :only => [:show, :update, :destroy]
-  before_filter :authenticate
+  before_action :fetch_image, :only => [:show, :update, :destroy]
+  before_action :authenticate
   layout 'admin'
 
   def show
