@@ -1,24 +1,17 @@
 development:
   clients:
     default:
-      hosts:
-        - localhost
+      hosts: [localhost]
       database: softfocus_development
 
 test:
   clients:
     default:
-      hosts:
-        - localhost
+      hosts: [localhost]
       database: softfocus_test
 
 production:
   clients:
     default:
+      hosts: [localhost]
       database: softfocus_production
-      hosts:
-        - db1.updn.io
-        - db2.updn.io
-      options:
-        user: softfocus
-        password: gWhi31D6j74EhdN
