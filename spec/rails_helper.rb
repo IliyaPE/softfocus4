@@ -7,6 +7,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
+Capybara.server = :puma, { Silent: true }
 Paperclip.options[:log] = false
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
