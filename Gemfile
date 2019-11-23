@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'sassc-rails'
 gem 'coffee-rails'
-gem 'uglifier'
 gem 'listen'
 gem 'rails', '~> 6.0.1'
 gem 'json'
