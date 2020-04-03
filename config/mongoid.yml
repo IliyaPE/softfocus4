@@ -13,5 +13,4 @@ test:
 production:
   clients:
     default:
-      hosts: [localhost]
-      database: softfocus_production
+      uri: <%= ENV["MONGO_URL"] %>

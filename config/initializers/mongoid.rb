@@ -1,1 +1,1 @@
-Mongo::Logger.logger = Rails.logger
+Mongoid.logger = Rails.logger
