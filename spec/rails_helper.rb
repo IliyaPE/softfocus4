@@ -5,8 +5,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rails'
-require 'capybara/poltergeist'
-Capybara.javascript_driver = :poltergeist
+require 'capybara/cuprite'
+Capybara.javascript_driver = :cuprite
 Capybara.server = :puma, { Silent: true }
 Paperclip.options[:log] = false
 

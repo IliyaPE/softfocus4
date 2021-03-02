@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'sassc-rails'
 gem 'coffee-rails'
+gem 'mini_racer'
 gem 'listen'
 gem 'rails', '~> 6.0.3'
 gem 'json'
@@ -16,7 +17,7 @@ gem 'puma'
 
 group :test, :development do
   gem 'capybara'
-  gem 'poltergeist'
+  gem 'cuprite'
   gem 'rspec-rails'
   gem 'spring'
   gem 'spring-commands-rspec'
