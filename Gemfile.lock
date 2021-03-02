@@ -139,7 +139,7 @@ GEM
     mongoid-paperclip (0.0.11)
       mongoid
       paperclip (>= 2.3.6, != 4.3.0)
-    nio4r (2.5.4)
+    nio4r (2.5.5)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -150,7 +150,7 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     public_suffix (4.0.6)
-    puma (5.2.0)
+    puma (5.2.1)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
