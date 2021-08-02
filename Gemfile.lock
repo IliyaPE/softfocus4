@@ -88,16 +88,16 @@ GEM
       ferrum (~> 0.11.0)
     diff-lcs (1.4.4)
     erubi (1.10.0)
-    execjs (2.7.0)
+    execjs (2.8.1)
     ferrum (0.11)
       addressable (~> 2.5)
       cliver (~> 0.3)
       concurrent-ruby (~> 1.1)
       websocket-driver (>= 0.6, < 0.8)
-    ffi (1.15.0)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
-    haml (5.2.1)
+    ffi (1.15.3)
+    globalid (0.5.2)
+      activesupport (>= 5.0)
+    haml (5.2.2)
       temple (>= 0.8.0)
       tilt
     i18n (1.8.10)
@@ -114,11 +114,11 @@ GEM
     kaminari-mongoid (1.0.1)
       kaminari-core (~> 1.0)
       mongoid
-    libv8 (8.4.255.0)
-    listen (3.5.1)
+    libv8 (8.4.255.0-x86_64-linux)
+    listen (3.6.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.10.0)
+    loofah (2.11.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -127,7 +127,7 @@ GEM
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0225)
+    mime-types-data (3.2021.0704)
     mimemagic (0.3.10)
       nokogiri (~> 1)
       rake
@@ -136,9 +136,9 @@ GEM
     mini_racer (0.3.1)
       libv8 (~> 8.4.255)
     minitest (5.14.4)
-    mongo (2.14.0)
+    mongo (2.15.0)
       bson (>= 4.8.2, < 5.0.0)
-    mongoid (7.3.0)
+    mongoid (7.3.1)
       activemodel (>= 5.1, < 6.2)
       mongo (>= 2.10.5, < 3.0.0)
     mongoid-paperclip (0.0.11)
@@ -155,7 +155,7 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     public_suffix (4.0.6)
-    puma (5.3.2)
+    puma (5.4.0)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -187,8 +187,8 @@ GEM
       method_source
       rake (>= 0.13)
       thor (~> 1.0)
-    rake (13.0.3)
-    rb-fsevent (0.10.4)
+    rake (13.0.6)
+    rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.1.1)
@@ -254,7 +254,7 @@ DEPENDENCIES
   kaminari-actionview
   kaminari-mongoid
   listen
-  mini_racer
+  mini_racer (~> 0.3.1)
   mongoid
   mongoid-paperclip
   paperclip
