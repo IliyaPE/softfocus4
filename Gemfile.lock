@@ -1,9 +1,9 @@
 GIT
-  remote: https://github.com/aplaut-tech/mongoid-paperclip.git
-  revision: e8c95794b95eb0b3bccff665697aaee988e17160
+  remote: https://github.com/megatux/mongoid-paperclip.git
+  revision: 6eecdc7daf86bdff4bc6f3afd387e795cee9f490
   specs:
     mongoid-paperclip (1.0.0.pre)
-      kt-paperclip (>= 2.3.6, != 4.3.3, != 4.3.0)
+      kt-paperclip
       mongoid
 
 GEM

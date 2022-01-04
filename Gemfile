@@ -11,7 +11,7 @@ gem 'json'
 gem 'mongoid'
 gem 'jquery-rails'
 gem 'haml'
-gem 'mongoid-paperclip', github: 'aplaut-tech/mongoid-paperclip' # fork using kt-paperclip https://github.com/mrrooijen/mongoid-paperclip/issues/79
+gem 'mongoid-paperclip', github: 'megatux/mongoid-paperclip' # fork using kt-paperclip https://github.com/mrrooijen/mongoid-paperclip/issues/79
 gem 'kaminari-mongoid'
 gem 'kaminari-actionview'
 gem 'puma'
