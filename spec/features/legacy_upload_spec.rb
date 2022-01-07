@@ -4,8 +4,8 @@ describe "legacy page" do
   before :each do
     visit legacy_path
   end
-  
-  it "allows image upload with UTF-8 filenames" do  
+
+  it "allows image upload with UTF-8 filenames" do
     attach_file 'file', "spec/fixtures/jpn_すべての人間は.png"
     click_on 'Send'
     image = Image.last
