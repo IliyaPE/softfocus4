@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-ruby "3.0.3"
+ruby "3.1.0"
 
 gem 'sassc-rails'
 gem 'coffee-rails'
-gem 'mini_racer', '~> 0.3.1' # 0.4 causes invalid pointer error
+gem 'mini_racer'
 gem 'listen'
 gem 'rails', '~> 6.1.4'
 gem 'json'

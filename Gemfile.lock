@@ -121,7 +121,7 @@ GEM
       marcel (~> 1.0.1)
       mime-types
       terrapin (~> 0.6.0)
-    libv8 (8.4.255.0)
+    libv8-node (16.10.0.0)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -138,8 +138,8 @@ GEM
     mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
     mini_portile2 (2.7.1)
-    mini_racer (0.3.1)
-      libv8 (~> 8.4.255)
+    mini_racer (0.6.2)
+      libv8-node (~> 16.10.0.0)
     minitest (5.15.0)
     mongo (2.17.0)
       bson (>= 4.8.2, < 5.0.0)
@@ -255,7 +255,7 @@ DEPENDENCIES
   kaminari-actionview
   kaminari-mongoid
   listen
-  mini_racer (~> 0.3.1)
+  mini_racer
   mongoid
   mongoid-paperclip
   puma
@@ -266,7 +266,7 @@ DEPENDENCIES
   spring-commands-rspec
 
 RUBY VERSION
-   ruby 3.0.3p157
+   ruby 3.1.0p0
 
 BUNDLED WITH
-   2.2.32
+   2.3.7
