@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/jarthod/mongoid-paperclip.git
+  revision: 62ec343d9a1a088b9105e4b79617af94cbd4162a
+  branch: fix-id-partition
+  specs:
+    mongoid-paperclip (0.1.0)
+      kt-paperclip
+      mongoid
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -156,9 +165,6 @@ GEM
       activemodel (>= 5.1, < 7.1, != 7.0.0)
       mongo (>= 2.10.5, < 3.0.0)
       ruby2_keywords (~> 0.0.5)
-    mongoid-paperclip (0.1.0)
-      kt-paperclip
-      mongoid
     net-imap (0.2.3)
       digest
       net-protocol
@@ -283,7 +289,7 @@ DEPENDENCIES
   listen
   mini_racer
   mongoid
-  mongoid-paperclip
+  mongoid-paperclip!
   puma
   rails (~> 7.0.2)
   rspec-rails

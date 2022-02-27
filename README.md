@@ -28,3 +28,9 @@ $ dokku run console
 ```ruby
 Image.lt(created_at: 2.months.ago).destroy_all
 ```
+
+Delete old dangling files because of paperclip wrong folder:
+
+```sh
+$ find . -mtime +60 -delete
+```
