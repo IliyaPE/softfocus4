@@ -34,7 +34,7 @@ jobs:
         rbenv version
     - name: Install gems 💎
       run: |
-        gem install bundler --no-document --conservative -v '2.3.7'
+        gem install bundler --no-document --conservative -v '2.3.10'
         bundle install --jobs 4 --retry 3
     - name: Run specs 🐛
       timeout-minutes: 1
