@@ -14,7 +14,7 @@ gem 'haml'
 gem 'mongoid-paperclip', github: 'jarthod/mongoid-paperclip', branch: 'fix-id-partition' # waiting for https://github.com/mrrooijen/mongoid-paperclip/pull/82 to be merged
 gem 'kaminari-mongoid'
 gem 'kaminari-actionview'
-gem 'puma', '~> 5.6' # puma 6 is not supported by latest capaybara yet (3.37.1)
+gem 'puma'
 
 group :test, :development do
   gem 'capybara'
