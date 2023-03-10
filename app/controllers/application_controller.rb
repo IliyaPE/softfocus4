@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   PASSWORD = if Rails.env.test?
     'e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4'  # Fake password for testing ("secret")
   else
-    '85c62f5053d51cc4407655fc9b4b377a23598414'  # Real password
+    'ce5e1f73cda2fed668eec0e4390711b7f3272a2c'  # Real password
   end
   before_action :check_login
 
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   def check_login
     authenticate_with_http_basic do |username, password|
-      @authenticated = (username == 'bigbourin' and Digest::SHA1.hexdigest(password) == PASSWORD)
+      @authenticated = (Digest::SHA1.hexdigest(password) == PASSWORD)
     end
   end
 
